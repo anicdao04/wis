@@ -20,6 +20,62 @@ trait PageTemplates
     | - page slug
     */
 
+
+    private function academics()
+    {
+        $this->crud->addField([   // CustomHTML
+                        'name' => 'metas_separator',
+                        'type' => 'custom_html',
+                        'value' => '<br><h2>'.trans('backpack::pagemanager.metas').'</h2><hr>',
+                    ]);
+        $this->crud->addField([
+                        'name' => 'meta_title',
+                        'label' => trans('backpack::pagemanager.meta_title'),
+                        'fake' => true,
+                        'store_in' => 'extras',
+                    ]);
+        $this->crud->addField([
+                        'name' => 'meta_description',
+                        'label' => trans('backpack::pagemanager.meta_description'),
+                        'fake' => true,
+                        'store_in' => 'extras',
+                    ]);
+        $this->crud->addField([
+                        'name' => 'meta_keywords',
+                        'type' => 'textarea',
+                        'label' => trans('backpack::pagemanager.meta_keywords'),
+                        'fake' => true,
+                        'store_in' => 'extras',
+                    ]);
+        $this->crud->addField([   // CustomHTML
+                        'name' => 'content_separator',
+                        'type' => 'custom_html',
+                        'value' => '<br><h2>'.trans('backpack::pagemanager.content').'</h2><hr>',
+                    ]);
+        $this->crud->addField([ // image
+                        'label' => "Banner Photo [1400x 450px]",
+                        'name' => "bp",
+                        'type' => 'image',
+                        'fake' => true,
+                        'aspect_ratio' => 1,
+                        ]); 
+        // $this->crud->addField([ // image
+        //                 'label' => "Department Logo [300x300]",
+        //                 'name' => "logo",
+        //                 'type' => 'image',
+        //                 'fake' => true,
+        //                 'aspect_ratio' => 1,
+        //                 ]); 
+        $this->crud->addField([
+                        'name' => 'content',
+                        'label' => 'Academic Programs',
+                        'type' => 'wysiwyg',
+                        'placeholder' => trans('backpack::pagemanager.content_placeholder'),
+                    ]);
+    }
+
+
+
     private function about()
     {
         $this->crud->addField([   // CustomHTML
@@ -60,52 +116,7 @@ trait PageTemplates
     }
 
 
- private function academics()
-    {
-        $this->crud->addField([   // CustomHTML
-                        'name' => 'metas_separator',
-                        'type' => 'custom_html',
-                        'value' => '<br><h2>'.trans('backpack::pagemanager.metas').'</h2><hr>',
-                    ]);
-        $this->crud->addField([
-                        'name' => 'meta_title',
-                        'label' => trans('backpack::pagemanager.meta_title'),
-                        'fake' => true,
-                        'store_in' => 'extras',
-                    ]);
-        $this->crud->addField([
-                        'name' => 'meta_description',
-                        'label' => trans('backpack::pagemanager.meta_description'),
-                        'fake' => true,
-                        'store_in' => 'extras',
-                    ]);
-        $this->crud->addField([
-                        'name' => 'meta_keywords',
-                        'type' => 'textarea',
-                        'label' => trans('backpack::pagemanager.meta_keywords'),
-                        'fake' => true,
-                        'store_in' => 'extras',
-                    ]);
-        $this->crud->addField([   // CustomHTML
-                        'name' => 'content_separator',
-                        'type' => 'custom_html',
-                        'value' => '<br><h2>'.trans('backpack::pagemanager.content').'</h2><hr>',
-                    ]);
-        $this->crud->addField([ // image
-                        'label' => "Banner Photo [1400x 450px]",
-                        'name' => "bp",
-                        'type' => 'image',
-                        'fake' => true,
-                        'aspect_ratio' => 1,
-                        ]); 
-        $this->crud->addField([
-                        'name' => 'content',
-                        'label' => trans('backpack::pagemanager.content'),
-                        'type' => 'wysiwyg',
-                        'placeholder' => trans('backpack::pagemanager.content_placeholder'),
-                    ]);
-    }
-
+ 
 
 
 

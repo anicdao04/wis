@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 /*
 |--------------------------------------------------------------------------
@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 
 Route::get('/','PagesController@home')->name('home');
 
@@ -38,6 +40,10 @@ Route::group([
     CRUD::resource('historybanner', 'HistorybannerCrudController');
     CRUD::resource('aboutcontent', 'AboutcontentCrudController');
     CRUD::resource('contact', 'ContactCrudController');
+    CRUD::resource('acad_carousel', 'Acad_carouselCrudController');
+    CRUD::resource('teacher', 'TeacherCrudController');
+    CRUD::resource('category_teacher', 'CategoryTeacherCrudController');
+    CRUD::resource('socialskill', 'SocialskillCrudController');
 
 
     // Route::get('section_management/{id}/view', 'SectionManagementCrudController@View')->name('ViewSecion');
@@ -45,3 +51,5 @@ Route::group([
     Route::get('misc/{students}/print', 'MiscPrintController@index');
 
 });
+
+

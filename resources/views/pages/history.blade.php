@@ -40,7 +40,7 @@
   }
   .card{
   	border-radius: 0px;
-  	background-color: #c3c3e5;
+  	background-color: #883086;
   	border: 1px solid #f0f0f5;
   }
   .card-body{
@@ -171,7 +171,6 @@
 						@endforeach
 				</div>	
 		</div>
-
 
 
 

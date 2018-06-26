@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAboutcontentsTable extends Migration
+class CreateSocialskillsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class CreateAboutcontentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('aboutcontents', function (Blueprint $table) {
+        Schema::create('socialskills', function (Blueprint $table) {
             $table->increments('id');
-            $table->longText('category')->unique();
-            $table->longText('content');
+            $table->longText('skill');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreateAboutcontentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aboutcontents');
+        Schema::dropIfExists('socialskills');
     }
 }

@@ -59,6 +59,21 @@
 
 
 <li class="treeview">
+    <a href="#"><i class="fa fa-newspaper-o"></i> <span>Academic Section</span> <i class="fa fa-angle-left pull-right"></i></a>
+    <ul class="treeview-menu">
+		<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/acad_carousel') }}'><i class='fa fa-cog'></i> <span>Carousel</span></a></li>
+
+		<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/teacher') }}'><i class='fa fa-cog'></i> <span>Teachers</span></a></li>
+
+		<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/category_teacher') }}'><i class='fa fa-cog'></i> <span>Teacher's category</span></a></li>
+
+{{-- 		<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/socialskill') }}'><i class='fa fa-cog'></i> <span>Social skills</span></a></li> --}}
+
+	</ul>
+</li>
+
+
+<li class="treeview">
     <a href="#"><i class="fa fa-newspaper-o"></i> <span>Contact</span> <i class="fa fa-angle-left pull-right"></i></a>
     <ul class="treeview-menu">
 		<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/contact') }}'><i class='fa fa-cog'></i> <span>Contact</span></a></li>
