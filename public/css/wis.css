@@ -598,8 +598,10 @@ footer .social-links a {
 
 
 /* Additional css */
+
+
 li{
-  list-style-type: none;
+  /*list-style-type: none;*/
 }
 
 .main-sb{
@@ -607,4 +609,17 @@ li{
   padding-right: 20px;
   padding-top: 0px;
 
+}
+
+
+
+#owl-demo .item{
+  background: #42bdc2;
+  padding: 30px 0px;
+  margin: 10px;
+  color: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
 }

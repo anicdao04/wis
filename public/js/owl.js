@@ -5,7 +5,7 @@ $(document).ready(function() {
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem:true,
-      items:1,
+      items:2,
       autoplay:true,
       loop:true
  
@@ -26,7 +26,7 @@ $('.owl-carousel').owlCarousel({
     autoplay:true,
     loop:true,
     autoWidth:true,
-    items:6
+    items:2
 })
 
 });

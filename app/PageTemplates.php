@@ -59,13 +59,13 @@ trait PageTemplates
                         'fake' => true,
                         'aspect_ratio' => 1,
                         ]); 
-        // $this->crud->addField([ // image
-        //                 'label' => "Department Logo [300x300]",
-        //                 'name' => "logo",
-        //                 'type' => 'image',
-        //                 'fake' => true,
-        //                 'aspect_ratio' => 1,
-        //                 ]); 
+        $this->crud->addField([ // image
+                        'label' => "Department Logo [300x350]",
+                        'name' => "logo",
+                        'type' => 'image',
+                        'fake' => true,
+                        'aspect_ratio' => 1,
+                        ]); 
         $this->crud->addField([
                         'name' => 'content',
                         'label' => 'Academic Programs',

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ReviewcarouselCrudController;
 use App\Http\Controllers\TestimonialCrudController;
+
 use App\Models\Testimonial;
 
 use App\Models\Reviewcarousel;
@@ -19,6 +20,7 @@ class PagesController extends Controller
 {
     public function home()
     {
+        
     	$this->data['menu_items'] = MenuItem::getTree();
     	$this->data['pages'] = Page::get();
     	$this->data['reviews'] = Reviewcarousel::get();

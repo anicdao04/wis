@@ -26,13 +26,17 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+	{{-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet"> --}}
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
 	
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link type="img/gif" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/ajax-loader.gif">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <link type="img/png" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.video.play.png">
     {{-- <link rel="stylesheet" href="http://idangero.us/swiper/dist/css/swiper.min.css"> --}}
 
 
@@ -41,12 +45,31 @@
 	<link rel="stylesheet" href="{{ asset('css/testimonial-slider.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/social-icons.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">   
+    <link rel="stylesheet" href="{{ asset('css/owl.css') }}">   
 
 	<style>
 	.about-banner{
 		background:url('{!! json_decode($distinct_page->extras)->bp !!}') right no-repeat !important;
 		background-size:cover;
 	}
+	.carousel-description {
+		/*border-left: 5px solid #F6BB3D;*/
+		border-bottom: 5px solid #F6BB3D;
+		width: 100%;
+		color: #FFF;
+		text-align: center;
+		font-size: 13px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-weight: 100;
+		background-color: rgba(102, 31, 153, 0.8);
+		z-index: 1;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	
 	</style>
 
 
@@ -72,8 +95,17 @@
 
 	<div class="container mt-3 mb-5">
 		<div class="row">
-		<div class="col-md-4 widget-wrap" style="min-height: 200px;">
+		<div class="col-md-3 widget-wrap">
 					<div class="single-sidebar-widget post-category-widget">
+					<div class="mb-3">
+						<img src="{!! json_decode($distinct_page->extras)->logo !!}" class="img-fluid">
+						<div class="mb-3">
+
+							Duration
+						</div>
+					</div>
+
+
 						<h4 class="category-title">Other Curriculum</h4>
 							<ul class="cat-list">
 							@foreach ($menu_items as $menu_item)
@@ -93,7 +125,7 @@
 					</div>			
 		</div>
 
-	<div class="col-md-8 main-sb">
+	<div class="col-md-9 main-sb">
 {{-- 		<h3>Social Skills</h3>
 			<hr>
 				@foreach($socialskills as $skills)
@@ -102,6 +134,26 @@
 					</div>
 				@endforeach --}}
 			{!! $distinct_page->content!!}
+
+<section class="feature-area p-3" style="background-color: #fff;">
+	<div class="container">
+		<h3 align="center" class="mb-4">TEACHERS</h3>
+		<div id="owl-carousel" class="owl-carousel owl-theme d-flex wow fadeIn" data-wow-duration="1s">
+			@foreach($teachers as $teacher)
+		  		<div class="item" style="position: relative;">
+		  			<img src="{{$teacher->image}}">
+		  			<div class="carousel-description">
+		  				<p class="mb-0">{{ $teacher->name }}</p>
+		  				<small class="mb-0">{{ $teacher->position }}</small>
+		  			</div>
+		  		</div>
+		    @endforeach
+		</div>
+		
+	</div>
+</section>			
+
+
 
 	</div>	
 
@@ -232,6 +284,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/swipe/2.0.0/swipe.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	{{-- <script src="{{ asset('js/owl.carousel.min.js') }}"></script> --}}
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    {{-- <script src="{{ asset('js/owl.js') }}"></script>  --}}
+    {{-- <script src="{{ asset('js/main.js') }}"></script>  --}}
 
 
 	<script>
@@ -242,6 +298,28 @@
 				$('.transformative').removeClass('mobile-view');
 			}
 		}
+
+		$('#owl-carousel').owlCarousel({
+		    // loop:true,
+		    margin:20,
+		    autoplay: true,
+		    autoplayHoverPause: true,
+		    dots: false,
+		    smartSpeed: 1000,
+		    slideTransition: 'linear'
+		    // nav:true,
+		    // responsive:{
+		    //     0:{
+		    //         items:1
+		    //     },
+		    //     600:{
+		    //         items:3
+		    //     },
+		    //     1000:{
+		    //         items:5
+		    //     }
+		    // }
+		})
 
 		$(window).resize(checkWindow);
 		$(document).ready(checkWindow);
