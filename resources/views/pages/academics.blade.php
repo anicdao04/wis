@@ -300,7 +300,7 @@
 		}
 
 		$('#owl-carousel').owlCarousel({
-		    // loop:true,
+		    loop:true,
 		    margin:20,
 		    autoplay: true,
 		    autoplayHoverPause: true,
