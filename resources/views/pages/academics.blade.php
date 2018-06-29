@@ -25,7 +25,7 @@
 
 
 	<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Work+Sans" rel="stylesheet">
 	{{-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet"> --}}
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
@@ -59,10 +59,10 @@
 		width: 100%;
 		color: #FFF;
 		text-align: center;
-		font-size: 13px;
+		font-size: 15px;
+		font-family: 'Lato', sans-serif;
 		padding-top: 5px;
 		padding-bottom: 5px;
-		font-weight: 100;
 		background-color: rgba(102, 31, 153, 0.8);
 		z-index: 1;
 		left: 0;
@@ -70,6 +70,27 @@
 		bottom: 0;
 	}
 	
+  .card{
+  	border-radius: 0px;
+  	background-color: #fff;
+  	border: 1px solid #e1e1ea;
+  }
+
+   .card-body{
+	color: #47476b;
+	font-size: 15px;
+	background-color: #fff;
+	font-family: 'Work Sans', sans-serif;
+  }
+   .card-title{
+  	  font-size: 18px;
+  	  color: #29293d;
+  	  font-weight: normal;
+  	  cursor: pointer !important;
+  	  font-family: 'Lato', sans-serif;
+  	}
+
+
 	</style>
 
 
@@ -106,7 +127,7 @@
 					</div>
 
 
-						<h4 class="category-title">Other Curriculum</h4>
+						<div class="category-title">Other Curriculum</div>
 							<ul class="cat-list">
 							@foreach ($menu_items as $menu_item)
 							  @if ($menu_item->children)
@@ -125,7 +146,7 @@
 					</div>			
 		</div>
 
-	<div class="col-md-9 main-sb">
+	<div class="col-md-9 main-sb card-body">
 {{-- 		<h3>Social Skills</h3>
 			<hr>
 				@foreach($socialskills as $skills)
@@ -134,6 +155,33 @@
 					</div>
 				@endforeach --}}
 			{!! $distinct_page->content!!}
+
+
+<section class="feature-area p-3" style="background-color: #fff;">
+<div id="accordion">
+	<div class="card">
+	  @foreach($subjects as $subject)
+	    <div class="card-header" id="headingOne">
+	      <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#{{$subject->id}}" aria-expanded="true" aria-controls="collapseOne"><span class="card-title text-uppercase"> 
+	          {!!$subject->name!!}</span>
+	        </button>	
+	      </h5>
+	    </div>
+	    <div id="{{$subject->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+	      <div class="card-body">
+	        {!!$subject->content!!}
+	      </div>
+	    </div>
+	  @endforeach
+	  
+	</div>
+</div>	
+</section>
+
+
+
+
 
 <section class="feature-area p-3" style="background-color: #fff;">
 	<div class="container">

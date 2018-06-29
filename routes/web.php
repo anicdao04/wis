@@ -44,6 +44,9 @@ Route::group([
     CRUD::resource('teacher', 'TeacherCrudController');
     CRUD::resource('category_teacher', 'CategoryTeacherCrudController');
     CRUD::resource('socialskill', 'SocialskillCrudController');
+    CRUD::resource('subject', 'SubjectCrudController');
+    CRUD::resource('subjectcategory', 'SubjectcategoryCrudController');
+    CRUD::resource('popularlink', 'PopularlinkCrudController');
 
 
     // Route::get('section_management/{id}/view', 'SectionManagementCrudController@View')->name('ViewSecion');

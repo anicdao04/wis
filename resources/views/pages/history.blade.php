@@ -37,10 +37,11 @@
   .card-header{
   	  padding: 5px;
   	  border-radius: 0px;
+  	  border-bottom: 5px solid #F6BB3D;
   }
   .card{
   	border-radius: 0px;
-  	background-color: #883086;
+  	background-color: rgba(102, 31, 153, 0.8);
   	border: 1px solid #f0f0f5;
   }
   .card-body{
@@ -48,6 +49,7 @@
 	font-size: 16px;
 	letter-spacing: .5px;
 	word-spacing: .8px;
+	background-color: #fff;
   }
 
   .card-title{
@@ -60,9 +62,6 @@
   .btn-link{
   	cursor: pointer !important;
   	text-decoration: none !important;
-  }
-  .card-body{
-  	background-color: #fff;
   }
 
   </style>

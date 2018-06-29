@@ -8,7 +8,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Acad_carouselCrudController;
 use App\Http\Controllers\SocialskillCrudController;
 use App\Http\Controllers\TeacherCrudController;
+use App\Http\Controllers\SubjectCrudController;
 
+use App\Models\Subject;
 use App\Models\Teacher;
 use App\Models\Socialskill;
 use App\Models\Acad_carousel;
@@ -26,8 +28,11 @@ class AcademicController extends Controller
         // $this->data['fabout'] = Page::select('template','name')->get();
         // $this->data['facad'] = Page::select('template','name')->get();
         // $this->data['fadd'] = Page::select('template','name')->get();
+        
         $this->data['title'] = $page[0]->title;  
         $this->data['teachers'] = Teacher::get();
+        $this->data['subjects'] = Subject::get();
+
         // $this->data['page'] = $page->withFakes();
         // $this->data['articles'] = Article::limit(6)->orderBy('updated_at','desc')->get();
         $this->data['socialskills'] = Socialskill::get();

@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ReviewcarouselCrudController;
 use App\Http\Controllers\TestimonialCrudController;
-
+use App\Http\Controllers\PopularlinkCrudController;
 use App\Models\Testimonial;
+use App\Models\Popularlink;
 
 use App\Models\Reviewcarousel;
 use Backpack\MenuCRUD\app\Models\MenuItem;
@@ -21,6 +22,7 @@ class PagesController extends Controller
     public function home()
     {
         
+        $this->data['popularlinks'] = Popularlink::get();   
     	$this->data['menu_items'] = MenuItem::getTree();
     	$this->data['pages'] = Page::get();
     	$this->data['reviews'] = Reviewcarousel::get();

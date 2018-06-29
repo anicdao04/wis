@@ -75,48 +75,14 @@
 
 		<div class="col-md-10 mx-auto p-0">
 			<div class="owl-carousel owl-theme pt-sm-3">
+				@foreach($popularlinks as $popularlink)
 			    <div class="item text-center">
 			    	<a class="nav-link" href="#">
-						<i class="fas fa-2x fa-ticket-alt"></i><br><br>
-						ARTSUW
+						<i class="fas fa-2x {{$popularlink->icon}}"></i><br><br>
+						{{$popularlink->name}}
 					</a>
 			    </div>
-			    <div class="item text-center">
-			    	<a class="nav-link" href="#">
-						<i class="fas fa-2x fa-map-marker-alt"></i><br><br>
-						MAPS
-					</a>
-			    </div>
-			    <div class="item text-center">
-			    	<a class="nav-link" href="#">
-						<i class="fas fa-2x fa-cogs"></i><br><br>
-						MYUW
-					</a>
-			    </div>
-			    <div class="item text-center">
-			    	<a class="nav-link" href="#">
-						<i class="fas fa-2x fa-trophy"></i><br><br>
-						ATHLETICS
-					</a>
-			    </div>
-			    <div class="item text-center">
-			    	<a class="nav-link" href="#">
-						<i class="fas fa-2x fa-share-square"></i><br><br>
-						SOCIAL
-					</a>
-			    </div>
-			    <div class="item text-center">
-			    	<a class="nav-link" href="#">
-						<i class="fas fa-2x fa-book-open"></i><br><br>
-						LIBRARIES
-					</a>
-			    </div>
-			    <div class="item text-center">
-			    	<a class="nav-link" href="#">
-						<i class="fas fa-2x fa-user-md"></i><br><br>
-						UW MEDICINE
-					</a>
-			    </div>
+			    @endforeach
 			</div>
 			
 		</div>

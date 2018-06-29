@@ -37,6 +37,8 @@
 <!-- This file is used to store sidebar items, starting with Backpack\Base 0.9.0 -->
 <li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/reviewcarousel') }}'><i class='fa fa-cog'></i> <span>Review Carousel</span></a></li>
 
+<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/popularlink') }}'><i class='fa fa-cog'></i> <span>Popular Links</span></a></li>
+
 <li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/testimonial') }}'><i class='fa fa-cog'></i> <span>Testimonials</span></a></li>
 
 <li class="treeview">
@@ -63,11 +65,24 @@
     <ul class="treeview-menu">
 		<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/acad_carousel') }}'><i class='fa fa-cog'></i> <span>Carousel</span></a></li>
 
-		<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/teacher') }}'><i class='fa fa-cog'></i> <span>Teachers</span></a></li>
-
-		<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/category_teacher') }}'><i class='fa fa-cog'></i> <span>Teacher's category</span></a></li>
+	<li class="treeview">
+		<a href="#"><i class="fa fa-newspaper-o"></i> <span>Teacher</span> <i class="fa fa-angle-left pull-right"></i></a>
+	<ul class="treeview-menu">
+		<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/teacher') }}'><i class='fa fa-cog'></i> <span>Add teacher</span></a></li>
+		<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/category_teacher') }}'><i class='fa fa-cog'></i> <span>Add category</span></a></li>
+	</ul>
+	</li>
 
 {{-- 		<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/socialskill') }}'><i class='fa fa-cog'></i> <span>Social skills</span></a></li> --}}
+
+	<li class="treeview">
+		<a href="#"><i class="fa fa-newspaper-o"></i> <span>Subject</span> <i class="fa fa-angle-left pull-right"></i></a>
+	<ul class="treeview-menu">
+		<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/subject') }}'><i class='fa fa-cog'></i> <span>Add subject</span></a></li>
+		<li><a href='{{ url(config('backpack.base.route_prefix', 'admin') . '/subjectcategory') }}'><i class='fa fa-cog'></i> <span>Add category</span></a></li>
+
+	</ul>
+	</li>
 
 	</ul>
 </li>

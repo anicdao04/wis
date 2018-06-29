@@ -3438,7 +3438,7 @@ dl.toggle.time-line:before{
     padding-bottom:120px
 }
 .widget-wrap{
-    background:#f8f9fa;
+    background:#f7f7f7;
     padding:0px;
     border:1px solid #eee
 }
@@ -3542,7 +3542,7 @@ dl.toggle.time-line:before{
     margin-left:12px
 }
 .widget-wrap .popular-post-widget .single-post-list .details h6{
-    font-weight:600;
+    /*font-weight:600;*/
     margin-bottom:0px;
     -webkit-transition:all 0.3s ease 0s;
     -moz-transition:all 0.3s ease 0s;
@@ -3563,7 +3563,9 @@ dl.toggle.time-line:before{
     background:#661F99;
     color:#fff;
     text-align:center;
-    padding:10px 0px
+    padding:10px 0px;
+    font-size:16px;
+    font-family: 'Lato', sans-serif;
 }
 .widget-wrap .post-category-widget .cat-list li{
     padding-top:15px;
