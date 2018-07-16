@@ -18,6 +18,7 @@
 	
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cssicon.space/css/icons.css">
 
 	<link rel="stylesheet" href="{{ asset('css/wis.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/main.css') }}">
@@ -37,12 +38,13 @@
   .card-header{
   	  padding: 5px;
   	  border-radius: 0px;
-  	  border-bottom: 5px solid #F6BB3D;
+  	  border-bottom: 10px solid #fff;
   }
   .card{
   	border-radius: 0px;
-  	background-color: rgba(102, 31, 153, 0.8);
-  	border: 1px solid #f0f0f5;
+  	/*background-color: rgba(102, 31, 153, 0.8);*/
+  	background-color: #F6BB3D;
+  	border: 1px solid #fff;
   }
   .card-body{
 	color: #33334d;
@@ -116,15 +118,23 @@
 
 <div id="accordion">
   <div class="card">
-  @foreach($aboutcontents as $key => $content)
+  @foreach($aboutcontents as $content)
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#{{$content->id}}" aria-expanded="true" aria-controls="collapseOne"><span class="card-title text-uppercase"> 
-          {!!$content->category!!}</span>
+      	<div class="row justify-content-lg-center">
+        <button class="btn btn-link col-md-10 col-sm-10 col-xs-10" data-toggle="collapse" data-target="#{{$content->id}}" aria-expanded="true" aria-controls="collapseOne" style="text-align: left;">
+        	<span class="card-title text-uppercase"> 
+          		{!!$content->category!!}
+          	</span>
         </button>	
+        
+        <button class="btn btn-link col-md-1 col-sm-1 col-xs-1 toggle-drop-down" data-toggle="collapse" data-target="#{{$content->id}}" aria-expanded="true" aria-controls="collapseOne">
+        <span class="card-title plus icon" style="margin-top: 0; color: #fff;"></span>
+    	</button>
+    	</div>
       </h5>
     </div>
-    <div id="{{$content->id}}" class="collapse {{$key ==0? 'show': ''}}" aria-labelledby="headingOne" data-parent="#accordion">
+    <div id="{{$content->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
         {!!$content->content!!}
       </div>
@@ -133,6 +143,10 @@
   </div>
 </div>
 </div>
+
+
+
+
 
 		<div class="col-lg-4 col-md-4 widget-wrap">
 
@@ -342,6 +356,13 @@
 		$('.btn-prev').on('click', function () {
 			window.mySwipe.prev();
 		})
+
+		$('.toggle-drop-down').bind('click',function(e){
+			$(this).find('.icon')
+			    .toggleClass('minus')
+			    .toggleClass('plus');
+		})
+
 	</script>
 
 </body>
